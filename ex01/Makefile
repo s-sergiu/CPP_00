@@ -2,7 +2,7 @@ NAME = myPhoneBook
 CC = c++
 FLAGS = -std=c++98 -Wall -Werror -Wextra
 
-SRC = main.cpp 
+SRC = main.cpp
 
 OBJ = main.o
 
@@ -11,7 +11,7 @@ all:$(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $@
 
-$(OBJ): $(SRC)
+%.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean: 
