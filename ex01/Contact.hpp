@@ -31,11 +31,11 @@ class Contact
 	{
 		DarkestSecret = secret;
 	}
-	void getFirstName()
+	void getFirstName(int index)
 	{
-		std::cout<<FirstName;
+		std::cout<<index<<" | "<<FirstName<<" | "<<LastName<<" | "<<Nickname<<std::endl;
 	}
-	bool hasFreeSlot()
+	bool isEmptyFirstName()
 	{
 		if (FirstName.length() > 0)
 			return true;

@@ -6,7 +6,9 @@ int main(void)
 {
 	std::string	command;
 	PhoneBook	myPhonebook;
+	int			index;
 
+	index = 0;
 	while (command != "EXIT")
 	{
 		std::cout<<"Phonebook commands - ADD, SEARCH, EXIT"<<std::endl;
@@ -15,7 +17,11 @@ int main(void)
 			command[j] = (char)toupper(command[j]);
 		if (command == "ADD")
 		{
-			myPhonebook.addContact();
+			if (index == 3)
+				index = 0;
+			std::cout<<"index: "<<index<<std::endl;
+			myPhonebook.addContact(index);
+			index++;
 		}
 		if (command == "SEARCH")
 		{

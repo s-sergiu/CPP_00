@@ -2,20 +2,18 @@
 #ifndef PHONEBOOK_CPP
 #define PHONEBOOK_CPP
 
+#define SLOTS 3
+
 class PhoneBook 
 {
 	private:
-		Contact	contacts[3];
+		Contact	contacts[SLOTS];
 	public:
-	void addContact()
+	void addContact(int index)
 	{
 		std::string word;
 		int			number;
-		int			index;
 
-		index = 0;
-		while (contacts[index].hasFreeSlot())
-			index++;
 		std::cout<<"Enter first name: ";
 		std::cin>>word;
 		contacts[index].setFirstName(word);
@@ -35,7 +33,15 @@ class PhoneBook
 
 	void	getContact()
 	{
-		contacts[0].getFirstName();
+		int	i;
+
+		i = 0;
+		while(i < SLOTS)
+		{
+			if (contacts[i].isEmptyFirstName())
+				contacts[i].getFirstName(i);
+			i++;
+		}
 	}
 	void searchContact()
 	{
