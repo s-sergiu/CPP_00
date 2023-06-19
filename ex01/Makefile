@@ -2,9 +2,13 @@ NAME = myPhoneBook
 CC = c++
 FLAGS = -std=c++98 -Wall -Werror -Wextra
 
-SRC = main.cpp
+SRC = main.cpp \
+	  Contact.cpp \
+	  PhoneBook.cpp
 
-OBJ = main.o
+OBJ = main.o \
+	  Contact.o \
+	  PhoneBook.o
 
 all:$(NAME)
 
