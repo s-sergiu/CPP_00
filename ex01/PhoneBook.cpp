@@ -1,25 +1,25 @@
 
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 
 void PhoneBook::addContact(int index)
 {
 	std::string word;
 	char	number;
 
-	std::cout<<"Enter first name: ";
+	system("clear");
+	std::cout<<"\e[32m Enter first name: \e[0m";
 	std::cin>>word;
 	contacts[index].setFirstName(word);
-	std::cout<<"Enter last name: ";
+	std::cout<<"\e[32m Enter last name: \e[0m";
 	std::cin>>word;
 	contacts[index].setLastName(word);
-	std::cout<<"Enter nickname: ";
+	std::cout<<"\e[32m Enter nickname: \e[0m";
 	std::cin>>word;
 	contacts[index].setNickname(word);
-	std::cout<<"Enter age: ";
+	std::cout<<"\e[32m Enter age: \e[0m";
 	std::cin>>number;
 	contacts[index].setAge(number);
-	std::cout<<"Enter darkest secret: ";
+	std::cout<<"\e[32m Enter darkest secret: \e[0m";
 	std::cin>>word;
 	contacts[index].setDarkestSecret(word);
 }
@@ -38,9 +38,21 @@ void	PhoneBook::getContact()
 }
 void PhoneBook::searchContact()
 {
+	int	index;
+
+	system("clear");
 	std::cout<<std::endl;
 	std::cout<<"Index | First Name | Last Name | Nickname "<<std::endl;
 	getContact();
+	std::cout<<"Ask for index: "<<std::endl;
+	std::cin>>index;
 	std::cout<<std::endl;
+	std::cout<<std::endl;
+}
+
+void	PhoneBook::displayMenu()
+{
+	std::cout<<"\e[35m Phonebook commands: ";
+	std::cout<<"\e[32mADD\e[0m, \e[36mSEARCH\e[0m, \e[31mEXIT \e[0m";
 	std::cout<<std::endl;
 }

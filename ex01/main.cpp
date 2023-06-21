@@ -1,5 +1,6 @@
-#include <iostream>
+
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int main(void)
 {
@@ -10,7 +11,7 @@ int main(void)
 	index = 0;
 	while (command != "EXIT")
 	{
-		std::cout<<"Phonebook commands - ADD, SEARCH, EXIT"<<std::endl;
+		myPhonebook.displayMenu();
 		std::cin>>command;
 		for (size_t j = 0; j < command.length(); j++)
 			command[j] = (char)toupper(command[j]);
@@ -24,6 +25,7 @@ int main(void)
 		}
 		if (command == "SEARCH")
 		{
+			system("clear");
 			myPhonebook.searchContact();
 		}
 	}
