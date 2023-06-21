@@ -22,6 +22,7 @@ void PhoneBook::addContact(int index)
 	std::cout<<"\e[32m Enter darkest secret: \e[0m";
 	std::cin>>word;
 	contacts[index].setDarkestSecret(word);
+	std::cout<<"I'm out";
 }
 
 void	PhoneBook::getContact()
@@ -52,7 +53,8 @@ void PhoneBook::searchContact()
 
 void	PhoneBook::displayMenu()
 {
-	std::cout<<"\e[35m Phonebook commands: ";
+	std::cout<<"\e[35m * Phonebook commands: ";
 	std::cout<<"\e[32mADD\e[0m, \e[36mSEARCH\e[0m, \e[31mEXIT \e[0m";
 	std::cout<<std::endl;
+	std::cout<<">: ";
 }

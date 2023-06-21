@@ -28,6 +28,7 @@ int main(void)
 			system("clear");
 			myPhonebook.searchContact();
 		}
+		std::cout<<"I'm here";
 	}
 	return (0);
 }
