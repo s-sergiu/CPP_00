@@ -4,25 +4,13 @@
 void PhoneBook::addContact(int index)
 {
 	std::string word;
-	char	number;
 
 	system("clear");
-	std::cout<<"\e[32m Enter first name: \e[0m";
-	std::cin>>word;
-	contacts[index].setFirstName(word);
-	std::cout<<"\e[32m Enter last name: \e[0m";
-	std::cin>>word;
-	contacts[index].setLastName(word);
-	std::cout<<"\e[32m Enter nickname: \e[0m";
-	std::cin>>word;
-	contacts[index].setNickname(word);
-	std::cout<<"\e[32m Enter age: \e[0m";
-	std::cin>>number;
-	contacts[index].setAge(number);
-	std::cout<<"\e[32m Enter darkest secret: \e[0m";
-	std::cin>>word;
-	contacts[index].setDarkestSecret(word);
-	std::cout<<"I'm out";
+	contacts[index].setFirstName();
+	contacts[index].setLastName();
+	contacts[index].setNickname();
+	contacts[index].setAge();
+	contacts[index].setDarkestSecret();
 }
 
 void	PhoneBook::getContact()
@@ -47,6 +35,10 @@ void PhoneBook::searchContact()
 	getContact();
 	std::cout<<"Ask for index: "<<std::endl;
 	std::cin>>index;
+	if (index > 0 && index < SLOTS)
+		std::cout<<index;	
+	else 
+		std::cout<<"error";
 	std::cout<<std::endl;
 	std::cout<<std::endl;
 }

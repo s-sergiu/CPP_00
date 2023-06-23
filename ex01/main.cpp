@@ -9,8 +9,9 @@ int main(void)
 	int			index;
 
 	index = 0;
-	while (command != "EXIT")
+	while (true)
 	{
+		system("clear");
 		myPhonebook.displayMenu();
 		std::cin>>command;
 		for (size_t j = 0; j < command.length(); j++)
@@ -23,12 +24,14 @@ int main(void)
 			myPhonebook.addContact(index);
 			index++;
 		}
-		if (command == "SEARCH")
+		else if (command == "SEARCH")
 		{
 			system("clear");
 			myPhonebook.searchContact();
 		}
-		std::cout<<"I'm here";
+		else if (command == "EXIT")
+			break ;
+		std::cout<<"Invalid input! "<<std::endl;
 	}
 	return (0);
 }

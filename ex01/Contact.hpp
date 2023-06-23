@@ -10,14 +10,14 @@ class Contact
 		std::string		FirstName;
 		std::string		LastName;
 		std::string		Nickname;
-		int				Age;
+		std::string		Age;
 		std::string		DarkestSecret;
 	public:
-	void setFirstName(std::string firstname);
-	void setLastName(std::string lastname);
-	void setNickname(std::string nickname);
-	void setAge(char age);
-	void setDarkestSecret(std::string secret);
+	void setFirstName();
+	void setLastName();
+	void setNickname();
+	void setAge();
+	void setDarkestSecret();
 	void getFirstName(int index);
 	bool isEmptyFirstName();
 };
