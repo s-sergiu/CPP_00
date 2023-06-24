@@ -10,7 +10,7 @@ class Contact
 		std::string		FirstName;
 		std::string		LastName;
 		std::string		Nickname;
-		std::string		Age;
+		int				Age;
 		std::string		DarkestSecret;
 	public:
 	void setFirstName();

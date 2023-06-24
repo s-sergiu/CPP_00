@@ -11,6 +11,7 @@ int main(void)
 	index = 0;
 	while (true)
 	{
+		std::cin.clear();
 		system("clear");
 		myPhonebook.displayMenu();
 		std::cin>>command;

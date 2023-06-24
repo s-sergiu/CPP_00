@@ -18,8 +18,17 @@ void Contact::setNickname()
 }
 void Contact::setAge()
 {
+	int age;
 	std::cout<<"\e[32m Enter age: \e[0m";
-	std::cin>>Age;
+	std::cin>>age;
+	if (std::cin.fail())
+	{
+		std::cout<<"\e[32m Please enter a valid number! \e[0m";
+		std::cout<<std::endl;
+		std::cin.clear();
+		std::cin.ignore(1000, '\n');
+	}
+	Age = age;
 }
 void Contact::setDarkestSecret()
 {
@@ -28,7 +37,7 @@ void Contact::setDarkestSecret()
 }
 void Contact::getFirstName(int index)
 {
-	std::cout<<index<<" | "<<FirstName<<" | "<<LastName<<" | "<<Nickname<<" | "<<Age<<std::endl;
+	std::cout<<index<<" | "<<FirstName<<" | "<<LastName<<" | "<<Nickname<<" | "<<Age<<" | "<<DarkestSecret<<std::endl;
 }
 bool Contact::isEmptyFirstName()
 {

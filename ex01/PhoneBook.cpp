@@ -34,7 +34,9 @@ void PhoneBook::searchContact()
 	std::cout<<"Index | First Name | Last Name | Nickname "<<std::endl;
 	getContact();
 	std::cout<<"Ask for index: "<<std::endl;
+	std::cin.clear();
 	std::cin>>index;
+	std::cout<<index;	
 	if (index > 0 && index < SLOTS)
 		std::cout<<index;	
 	else 
