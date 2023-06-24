@@ -52,13 +52,3 @@ void	PhoneBook::displayMenu()
 	std::cout<<std::endl;
 	std::cout<<">: ";
 }
-
-Added Thing
-Added another Thing
-added 3rd thing
-added 4th thing
-this is a bug
-added 6th thing
-added 7th thing
-added 8th thing
-added 9th thing
