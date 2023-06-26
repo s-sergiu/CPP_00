@@ -15,10 +15,10 @@ class Contact
 	public:
 	void createContact();
 	void getFirstName(int index);
-	bool isEmptyFirstName();
 	void getContactInfo();
 	void eraseContact();
 	void checkIfEmpty();
+	bool exists();
 };
 
 #endif

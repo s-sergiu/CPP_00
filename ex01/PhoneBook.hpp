@@ -18,6 +18,7 @@ class PhoneBook
 	void	run();
 	void	parseCommand(std::string *command);
 	void	displayContact(int choice);
+	void	displayContactByIndex();
 };
 
 #endif
