@@ -10,16 +10,15 @@ class Contact
 		std::string		FirstName;
 		std::string		LastName;
 		std::string		Nickname;
-		int				Age;
+		std::string		PhoneNumber;
 		std::string		DarkestSecret;
 	public:
-	void setFirstName();
-	void setLastName();
-	void setNickname();
-	void setAge();
-	void setDarkestSecret();
+	void createContact();
 	void getFirstName(int index);
 	bool isEmptyFirstName();
+	void getContactInfo();
+	void eraseContact();
+	void checkIfEmpty();
 };
 
 #endif
