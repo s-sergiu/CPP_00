@@ -73,10 +73,20 @@ void	Contact::getContactInfo()
 
 void	Contact::getFirstName(int index)
 {
-	std::cout<<index<<" | "<<FirstName;
-	std::cout<<" | "<<LastName<<" | "<<Nickname;
-	std::cout<<" | "<<PhoneNumber<<" | ";
-	std::cout<<std::setw(2)<<DarkestSecret;
+	std::cout<<index;
+	std::cout<<"|";
+	if (FirstName.length() > 10)
+		std::cout<<std::right<<std::setw(10)<<FirstName.substr(0, 9)<<".";
+	else
+		std::cout<<std::right<<std::setw(10)<<FirstName;
+	std::cout<<"|";
+	std::cout<<std::right<<std::setw(10)<<LastName;
+	std::cout<<"|";
+	std::cout<<std::right<<std::setw(10)<<Nickname;
+	std::cout<<"|";
+	std::cout<<std::right<<std::setw(10)<<PhoneNumber;
+	std::cout<<"|";
+	std::cout<<std::right<<std::setw(10)<<DarkestSecret;
 	std::cout<<std::endl;
 
 }

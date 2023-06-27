@@ -115,7 +115,15 @@ void	PhoneBook::listAllContacts()
 
 	i = -1;
 	std::cout<<std::endl;
-	std::cout<<"Index | First Name | Last Name | Nickname "<<std::endl;
+	std::cout<<std::setfill(' ')<<std::setw(10);
+	std::cout<<std::left<<"Index";
+	std::cout<<std::setfill(' ')<<std::setw(10);
+	std::cout<<"First Name";
+	std::cout<<std::setfill(' ')<<std::setw(10);
+	std::cout<<"Last Name";
+	std::cout<<std::setfill(' ')<<std::setw(10);
+	std::cout<<"Nickname";
+	std::cout<<std::endl;
 	while(++i < SLOTS)
 		if (contacts[i].exists())
 			contacts[i].getFirstName(i);
