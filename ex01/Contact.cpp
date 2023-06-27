@@ -72,17 +72,17 @@ void	Contact::getFirstName(int index)
 	std::cout<<std::right<<std::setw(10)<<index;
 	std::cout<<"|";
 	if (FirstName.length() > 9)
-		std::cout<<std::right<<std::setw(10)<<FirstName.substr(0, 9)<<".";
+		std::cout<<std::right<<std::setw(9)<<FirstName.substr(0, 9)<<".";
 	else
 		std::cout<<std::right<<std::setw(10)<<FirstName;
 	std::cout<<"|";
 	if (LastName.length() > 9)
-		std::cout<<std::right<<std::setw(10)<<LastName.substr(0, 9)<<".";
+		std::cout<<std::right<<std::setw(9)<<LastName.substr(0, 9)<<".";
 	else
 		std::cout<<std::right<<std::setw(10)<<LastName;
 	std::cout<<"|";
 	if (Nickname.length() > 9)
-		std::cout<<std::right<<std::setw(10)<<Nickname.substr(0, 9)<<".";
+		std::cout<<std::right<<std::setw(9)<<Nickname.substr(0, 9)<<".";
 	else
 		std::cout<<std::right<<std::setw(10)<<Nickname;
 	std::cout<<"|";
