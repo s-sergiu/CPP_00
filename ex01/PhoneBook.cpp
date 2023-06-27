@@ -6,6 +6,7 @@ void	PhoneBook::run(void)
 	std::string	command;
 	
 	index = 0;
+	system("clear");
 	while (true)
 	{
 		displayMenu();
@@ -17,7 +18,6 @@ void	PhoneBook::run(void)
 
 void	PhoneBook::displayMenu()
 {
-	system("clear");
 	std::cout<<"\e[45m                                        \e[0m";
 	std::cout<<std::endl;
 	std::cout<<"\e[1;33m* Phonebook commands: ";
@@ -40,7 +40,16 @@ void	PhoneBook::parseCommand(std::string *command)
 		searchContact();
 	}
 	else if (!(*command).compare("EXIT"))
+	{
+		system("clear");
+		std::cout<<"\e[92mProgram exited sucessfully...\e[0m"<<std::endl;
 		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		system("clear");
+		std::cout<<"\e[31mInvalid command!\e[0m"<<std::endl;
+	}
 }
 
 void	PhoneBook::addContact()
@@ -51,6 +60,7 @@ void	PhoneBook::addContact()
 	contacts[index].createContact();
 	contacts[index].checkIfEmpty();
 	index++;
+	system("clear");
 }
 
 void	PhoneBook::searchContact()
@@ -86,7 +96,10 @@ void	PhoneBook::displayContactByIndex()
 		searchContact();
 	}
 	else if (index == -1)
+	{
+		system("clear");
 		return ;
+	}
 	else if (index >= 0 && index < SLOTS)
 	{
 		if (contacts[index].exists())
@@ -143,7 +156,9 @@ void	PhoneBook::displayContact(int choice)
 			system("clear");
 			searchContact();
 		}
-		else
+		else if (index == 1)
 			return ;
+		else
+			displayContact(choice);
 	}
 }
