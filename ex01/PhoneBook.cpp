@@ -103,7 +103,10 @@ void	PhoneBook::displayContactByIndex()
 	else if (index >= 0 && index < SLOTS)
 	{
 		if (contacts[index].exists())
+		{
+			system("clear");
 			displayContact(index);
+		}
 		else
 		{			
 			system("clear");
@@ -148,17 +151,33 @@ void	PhoneBook::displayContact(int choice)
 		std::cout<<"Invalid contact index"<<std::endl;
 	else
 	{
-		system("clear");
 		contacts[choice].getContactInfo();
 		std::cin>>index;
-		if (index == 0)
+		if (std::cin.eof())
+			exit(13);
+		else if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore();
+			system("clear");
+			std::cout<<"\e[31mInvalid command!\e[0m"<<std::endl;
+			displayContact(choice);
+		}
+		else if (index == 0)
 		{
 			system("clear");
 			searchContact();
 		}
 		else if (index == 1)
+		{
+			system("clear");
 			return ;
+		}
 		else
+		{
+			system("clear");
+			std::cout<<"\e[31mInvalid command!\e[0m"<<std::endl;
 			displayContact(choice);
+		}
 	}
 }
