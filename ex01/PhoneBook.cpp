@@ -48,7 +48,7 @@ void	PhoneBook::parseCommand(std::string *command)
 	else
 	{
 		system("clear");
-		std::cout<<"\e[31mInvalid command!\e[0m"<<std::endl;
+		std::cout<<"\e[31m*Invalid command!\e[0m"<<std::endl;
 	}
 }
 
@@ -131,14 +131,14 @@ void	PhoneBook::listAllContacts()
 
 	i = -1;
 	std::cout<<std::endl;
-	std::cout<<std::setfill(' ')<<std::setw(10);
-	std::cout<<std::left<<"Index";
-	std::cout<<std::setfill(' ')<<std::setw(10);
-	std::cout<<"First Name";
-	std::cout<<std::setfill(' ')<<std::setw(10);
-	std::cout<<"Last Name";
-	std::cout<<std::setfill(' ')<<std::setw(10);
-	std::cout<<"Nickname";
+	std::cout<<std::right<<std::setw(10)<<"Index";
+	std::cout<<"|";
+	std::cout<<std::right<<std::setw(10)<<"First Name";
+	std::cout<<"|";
+	std::cout<<std::right<<std::setw(10)<<"Last Name";
+	std::cout<<"|";
+	std::cout<<std::right<<std::setw(10)<<"Nickname";
+	std::cout<<"|";
 	std::cout<<std::endl;
 	while(++i < SLOTS)
 		if (contacts[i].exists())
@@ -148,19 +148,22 @@ void	PhoneBook::listAllContacts()
 void	PhoneBook::displayContact(int choice)
 {
 	if (!contacts[choice].exists())
-		std::cout<<"Invalid contact index"<<std::endl;
+		std::cout<<"*Invalid contact index"<<std::endl;
 	else
 	{
 		contacts[choice].getContactInfo();
 		std::cin>>index;
 		if (std::cin.eof())
-			exit(13);
+		{
+			displayMenu();
+			system("clear");
+		}
 		else if (std::cin.fail())
 		{
 			std::cin.clear();
 			std::cin.ignore();
 			system("clear");
-			std::cout<<"\e[31mInvalid command!\e[0m"<<std::endl;
+			std::cout<<"\e[31m*Invalid command!\e[0m"<<std::endl;
 			displayContact(choice);
 		}
 		else if (index == 0)
@@ -176,7 +179,7 @@ void	PhoneBook::displayContact(int choice)
 		else
 		{
 			system("clear");
-			std::cout<<"\e[31mInvalid command!\e[0m"<<std::endl;
+			std::cout<<"\e[31m*Invalid command!\e[0m"<<std::endl;
 			displayContact(choice);
 		}
 	}

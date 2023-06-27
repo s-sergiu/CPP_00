@@ -5,18 +5,23 @@ void	Contact::createContact()
 {
 	std::cout<<"\e[32m Enter first name: \e[0m";
 	std::cin.ignore();
+	std::cin.clear();
 	std::getline(std::cin, FirstName, '\n');
 	std::cout<<"\e[32m Enter last name: \e[0m";
 	std::cin.ignore();
+	std::cin.clear();
 	std::getline(std::cin, LastName, '\n');
 	std::cout<<"\e[32m Enter nickname: \e[0m";
 	std::cin.ignore();
+	std::cin.clear();
 	std::getline(std::cin, Nickname, '\n');
 	std::cout<<"\e[32m Enter phone number: \e[0m";
 	std::cin.ignore();
+	std::cin.clear();
 	std::getline(std::cin, PhoneNumber, '\n');
 	std::cout<<"\e[32m Enter darkest secret: \e[0m";
 	std::cin.ignore();
+	std::cin.clear();
 	std::getline(std::cin, DarkestSecret, '\n');
 }
 
@@ -73,20 +78,23 @@ void	Contact::getContactInfo()
 
 void	Contact::getFirstName(int index)
 {
-	std::cout<<index;
+	std::cout<<std::right<<std::setw(10)<<index;
 	std::cout<<"|";
 	if (FirstName.length() > 10)
 		std::cout<<std::right<<std::setw(10)<<FirstName.substr(0, 9)<<".";
 	else
 		std::cout<<std::right<<std::setw(10)<<FirstName;
 	std::cout<<"|";
-	std::cout<<std::right<<std::setw(10)<<LastName;
+	if (LastName.length() > 10)
+		std::cout<<std::right<<std::setw(10)<<LastName.substr(0, 9)<<".";
+	else
+		std::cout<<std::right<<std::setw(10)<<LastName;
 	std::cout<<"|";
-	std::cout<<std::right<<std::setw(10)<<Nickname;
+	if (Nickname.length() > 10)
+		std::cout<<std::right<<std::setw(10)<<Nickname.substr(0, 9)<<".";
+	else
+		std::cout<<std::right<<std::setw(10)<<Nickname;
 	std::cout<<"|";
-	std::cout<<std::right<<std::setw(10)<<PhoneNumber;
-	std::cout<<"|";
-	std::cout<<std::right<<std::setw(10)<<DarkestSecret;
 	std::cout<<std::endl;
 
 }
