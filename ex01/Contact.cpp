@@ -6,14 +6,39 @@ void	Contact::createContact()
 	std::cout<<"\e[32m Enter first name: \e[0m";
 	std::cin.ignore();
 	std::getline(std::cin, FirstName, '\n');
+	if (std::cin.eof())	
+	{
+		system("clear");
+		return ;
+	}
 	std::cout<<"\e[32m Enter last name: \e[0m";
 	std::getline(std::cin, LastName, '\n');
+	if (std::cin.eof())	
+	{
+		system("clear");
+		return ;
+	}
 	std::cout<<"\e[32m Enter nickname: \e[0m";
 	std::getline(std::cin, Nickname, '\n');
+	if (std::cin.eof())	
+	{
+		system("clear");
+		return ;
+	}
 	std::cout<<"\e[32m Enter phone number: \e[0m";
 	std::getline(std::cin, PhoneNumber, '\n');
+	if (std::cin.eof())	
+	{
+		system("clear");
+		return ;
+	}
 	std::cout<<"\e[32m Enter darkest secret: \e[0m";
 	std::getline(std::cin, DarkestSecret, '\n');
+	if (std::cin.eof())	
+	{
+		system("clear");
+		return ;
+	}
 }
 
 void	Contact::checkIfEmpty()
@@ -63,29 +88,35 @@ void	Contact::getContactInfo()
 	std::cout<<"\e[32m Darkest secret: \e[0m"<<DarkestSecret;	
 	std::cout<<std::endl;
 	std::cout<<std::endl;
-	std::cout<<"\e[35m*Display contact list again \e[47m[0]\e[0m /";
-	std::cout<<"\e[33m Return to menu \e[35m\e[47m[1]\e[0m: ";	
+	std::cout<<"\e[1;33m*Display contact list again: ";
+	std::cout<<"\e[33m\e[48;5;18m[0]\e[0m /";
+	std::cout<<"\e[1;31m Return to menu: \e[0m";
+	std::cout<<"\e[33m\e[48;5;18m[1]\e[0m: ";	
 }
 
 void	Contact::getFirstName(int index)
 {
-	std::cout<<std::right<<std::setw(10)<<index;
+	std::cout<<"\e[94m\e[4m";
 	std::cout<<"|";
-	if (FirstName.length() > 9)
+	std::cout<<std::right<<std::setw(10)<<index;
+	std::cout<<"\e[93m";
+	std::cout<<"|";
+	if (FirstName.length() > 10)
 		std::cout<<std::right<<std::setw(9)<<FirstName.substr(0, 9)<<".";
 	else
 		std::cout<<std::right<<std::setw(10)<<FirstName;
 	std::cout<<"|";
-	if (LastName.length() > 9)
+	if (LastName.length() > 10)
 		std::cout<<std::right<<std::setw(9)<<LastName.substr(0, 9)<<".";
 	else
 		std::cout<<std::right<<std::setw(10)<<LastName;
 	std::cout<<"|";
-	if (Nickname.length() > 9)
+	if (Nickname.length() > 10)
 		std::cout<<std::right<<std::setw(9)<<Nickname.substr(0, 9)<<".";
 	else
 		std::cout<<std::right<<std::setw(10)<<Nickname;
 	std::cout<<"|";
 	std::cout<<std::endl;
+	std::cout<<"\e[0m";
 
 }
