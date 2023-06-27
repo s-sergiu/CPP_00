@@ -67,11 +67,16 @@ void	Contact::getContactInfo()
 	std::cout<<"\e[32m Darkest secret: \e[0m"<<DarkestSecret;	
 	std::cout<<std::endl;
 	std::cout<<std::endl;
-	std::cout<<"\e[35m Display contact list again \e[47m[0]\e[0m /";
+	std::cout<<"\e[35m*Display contact list again \e[47m[0]\e[0m /";
 	std::cout<<"\e[33m Return to menu \e[35m\e[47m[1]\e[0m: ";	
 }
 
 void	Contact::getFirstName(int index)
 {
-	std::cout<<index<<" | "<<FirstName<<" | "<<LastName<<" | "<<Nickname<<" | "<<PhoneNumber<<" | "<<DarkestSecret<<std::endl;
+	std::cout<<index<<" | "<<FirstName;
+	std::cout<<" | "<<LastName<<" | "<<Nickname;
+	std::cout<<" | "<<PhoneNumber<<" | ";
+	std::cout<<std::setw(2)<<DarkestSecret;
+	std::cout<<std::endl;
+
 }
