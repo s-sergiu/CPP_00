@@ -7,61 +7,48 @@ void	Contact::createContact()
 	std::cin.ignore();
 	std::getline(std::cin, FirstName, '\n');
 	if (std::cin.eof())	
-	{
-		system("clear");
 		return ;
-	}
 	std::cout<<"\e[32m Enter last name: \e[0m";
 	std::getline(std::cin, LastName, '\n');
 	if (std::cin.eof())	
-	{
-		system("clear");
 		return ;
-	}
 	std::cout<<"\e[32m Enter nickname: \e[0m";
 	std::getline(std::cin, Nickname, '\n');
 	if (std::cin.eof())	
-	{
-		system("clear");
 		return ;
-	}
 	std::cout<<"\e[32m Enter phone number: \e[0m";
 	std::getline(std::cin, PhoneNumber, '\n');
 	if (std::cin.eof())	
-	{
-		system("clear");
 		return ;
-	}
 	std::cout<<"\e[32m Enter darkest secret: \e[0m";
 	std::getline(std::cin, DarkestSecret, '\n');
 	if (std::cin.eof())	
-	{
-		system("clear");
 		return ;
-	}
 }
 
-void	Contact::checkIfEmpty()
+bool	Contact::isEmpty()
 {
 	if (FirstName.empty())
-		eraseContact();
+		return (eraseContact());
 	else if (LastName.empty())
-		eraseContact();
+		return (eraseContact());
 	else if (Nickname.empty())
-		eraseContact();
+		return (eraseContact());
 	else if (PhoneNumber.empty())
-		eraseContact();
+		return (eraseContact());
 	else if (DarkestSecret.empty())
-		eraseContact();
+		return (eraseContact());
+	return (false);
 }
 
-void	Contact::eraseContact()
+bool	Contact::eraseContact()
 {
 	FirstName.erase(FirstName.begin(), FirstName.end());
 	LastName.erase(LastName.begin(), LastName.end());
 	Nickname.erase(Nickname.begin(), Nickname.end());
 	PhoneNumber.erase(PhoneNumber.begin(), PhoneNumber.end());
 	DarkestSecret.erase(DarkestSecret.begin(), DarkestSecret.end());
+	return (true);
 }
 
 bool	Contact::exists()
@@ -94,7 +81,7 @@ void	Contact::getContactInfo()
 	std::cout<<"\e[33m\e[48;5;18m[1]\e[0m: ";	
 }
 
-void	Contact::getFirstName(int index)
+void	Contact::listContactSummary(int index)
 {
 	std::cout<<"\e[94m\e[4m";
 	std::cout<<"|";

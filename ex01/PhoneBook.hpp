@@ -3,7 +3,7 @@
 #define PHONEBOOK_CPP
 
 #include "Contact.hpp"
-#define SLOTS 3
+#define SLOTS 8
 
 class PhoneBook 
 {
@@ -17,8 +17,11 @@ class PhoneBook
 	void	displayMenu();
 	void	run();
 	void	parseCommand(std::string *command);
-	void	displayContact(int choice);
 	void	displayContactByIndex();
+	void	displayContactByIndexError();
+	void	displayContactsHeader();
+	void	displayContact(int choice);
+	void	displayContactErrorMsg(int choice);
 };
 
 #endif
