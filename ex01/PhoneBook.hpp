@@ -11,12 +11,12 @@ class PhoneBook
 		Contact	contacts[SLOTS];
 		int		index;
 	public:
-	void	addContact();
-	void	listAllContacts();
-	void	searchContact();
-	void	displayMenu();
 	void	run();
+	void	addContact();
+	void	searchContact();
 	void	parseCommand(std::string *command);
+	void	listAllContacts();
+	void	displayMenu();
 	void	displayContactByIndex();
 	void	displayContactByIndexError();
 	void	displayContactsHeader();

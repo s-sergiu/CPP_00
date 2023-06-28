@@ -15,9 +15,9 @@ class Contact
 		std::string		DarkestSecret;
 	public:
 	void createContact();
+	bool eraseContact();
 	void listContactSummary(int index);
 	void getContactInfo();
-	bool eraseContact();
 	bool isEmpty();
 	bool exists();
 };
