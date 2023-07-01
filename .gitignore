@@ -5,3 +5,4 @@ megaphone
 tests
 *.pdf
 tags
+*.vim
